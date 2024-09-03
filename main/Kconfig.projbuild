@@ -1,0 +1,60 @@
+menu "GPIO configuration"
+
+    config GPIO_TRANSMISSION_LED
+        int "Transmission LED GPIO number"
+        range 0 16
+        default 2
+        help
+            Set the transmission LED GPIO number.
+
+    config GPIO_TRANSMISSION_LED_ACTIVE_STATE
+        int "LED transmission state (0 for low, 1 for high)"
+        range 0 1
+        default 0
+        help
+            Set the active state for the transmission LED. Use 0 for active low, 1 for active high.
+
+    config GPIO_POWER_LED
+        int "Power LED GPIO number"
+        range 0 16
+        default 0
+        help
+            Set the power LED GPIO number.
+
+    config GPIO_POWER_LED_ACTIVE_STATE
+        int "Power LED active state (0 for low, 1 for high)"
+        range 0 1
+        default 0
+        help
+            Set the active state for the power LED. Use 0 for active low, 1 for active high.
+
+    config GPIO_BUTTON
+        int "Button GPIO number"
+        range 0 16
+        default 13
+        help
+            Set the button GPIO number.
+
+    config GPIO_BUTTON_ACTIVE_STATE
+        int "Button active state (0 for low, 1 for high)"
+        range 0 1
+        default 0
+        help
+            Set the active state for the button. Use 0 for active low, 1 for active high.
+            This setting also enables internal pull-up or pull-down resistors accordingly.
+
+    config GPIO_RELAY
+        int "Relay GPIO number"
+        range 0 16
+        default 15
+        help
+            Set the power LED GPIO number.
+
+    config GPIO_RELAY_ACTIVE_STATE
+        int "Power LED active state (0 for low, 1 for high)"
+        range 0 1
+        default 1
+        help
+            Set the active state for the relay. Use 0 for active low, 1 for active high.
+
+endmenu
