@@ -1,0 +1,12 @@
+.directory
+.vscode/*
+!.vscode/c_cpp_properties.json
+build/
+sdkconfig
+sdkconfig.old
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+.cache
+managed_components
+dependencies.lock
