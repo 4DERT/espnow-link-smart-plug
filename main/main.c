@@ -24,6 +24,7 @@
 #include "button.h"
 #include "leds.h"
 #include "relay.h"
+#include "link_handler.h"
 
 #define TAG "MAIN"
 
@@ -36,6 +37,8 @@ void app_main() {
   leds_init();
   relay_init();
   button_init();
+
+  lh_init();
 
   while (1) {
     vTaskDelay(pdMS_TO_TICKS(100));
