@@ -50,9 +50,8 @@ static void on_link_command(const char *cmd) {
 }
 
 static char *on_link_status_message_create(void) {
-  leds_set_level(LED_TRANSMISSION, LED_HIGH);
+  leds_transmission_led_blink();
   bool is_on = relay_get_state();
   char *status = link_generate_status_message(NULL, is_on ? "ON" : "OFF");
-  leds_set_level(LED_TRANSMISSION, LED_LOW);
   return status;
 }

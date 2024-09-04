@@ -13,5 +13,6 @@ typedef enum {
 
 void leds_init();
 void leds_set_level(led_t led, led_level_e level);
+void leds_transmission_led_blink();
 
 #endif // LEDS_H_
