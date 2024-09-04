@@ -30,6 +30,8 @@ void lh_init() {
   vTaskDelay(pdMS_TO_TICKS(10));
   bool is_force_pair_btn_pressed = button_is_pressed();
 
+  link_register(&link_config);
+
   link_start(is_force_pair_btn_pressed);
 }
 
