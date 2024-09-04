@@ -23,6 +23,7 @@
 // Project
 #include "button.h"
 #include "leds.h"
+#include "relay.h"
 
 #define TAG "MAIN"
 
@@ -33,6 +34,7 @@ void app_main() {
   uart_set_baudrate(UART_NUM_0, 115200);
 
   leds_init();
+  relay_init();
   button_init();
 
   while (1) {
