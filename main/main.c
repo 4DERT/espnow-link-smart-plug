@@ -20,6 +20,8 @@
 #include "nvs.h"
 #include "nvs_flash.h"
 
+#include "button.h"
+
 #define TAG "MAIN"
 
 void init_nvs(void);
@@ -27,7 +29,9 @@ void init_nvs(void);
 void app_main() {
   init_nvs();
   uart_set_baudrate(UART_NUM_0, 115200);
-;
+
+  button_init();
+
   while (1) {
     vTaskDelay(pdMS_TO_TICKS(100));
   }

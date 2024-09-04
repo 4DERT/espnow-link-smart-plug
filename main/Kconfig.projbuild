@@ -43,6 +43,13 @@ menu "GPIO configuration"
             Set the active state for the button. Use 0 for active low, 1 for active high.
             This setting also enables internal pull-up or pull-down resistors accordingly.
 
+    config GPIO_BUTTON_BOUNCE_TIME_MS
+        int "Button bounce time in ms"
+        range 0 1000
+        default 50
+        help
+            Set the button bounce time.
+
     config GPIO_RELAY
         int "Relay GPIO number"
         range 0 16
