@@ -3,6 +3,7 @@
 #include <stdbool.h>
 
 #include "leds.h"
+#include "button.h"
 
 #define RELAY_GPIO CONFIG_GPIO_RELAY
 #define RELAY_HIGH CONFIG_GPIO_RELAY_ACTIVE_STATE
@@ -22,16 +23,19 @@ bool relay_get_state() {
 }
 
 void relay_on() {
+  button_notify_ignore();
   gpio_set_level(RELAY_GPIO, RELAY_HIGH);
   leds_set_level(LED_POWER, LED_HIGH);
 }
 
 void relay_off() {
+  button_notify_ignore();
   gpio_set_level(RELAY_GPIO, RELAY_LOW);
   leds_set_level(LED_POWER, LED_LOW);
 }
 
 void relay_toggle() {
+  button_notify_ignore();
   const bool state = relay_get_state();
   gpio_set_level(RELAY_GPIO, !state);
   leds_set_level(LED_POWER, (!state ? LED_HIGH : LED_LOW));

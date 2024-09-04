@@ -1,5 +1,8 @@
 #include "link_handler.h"
 
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -29,6 +32,8 @@ void lh_init() {
 
   link_start(is_force_pair_btn_pressed);
 }
+
+inline void lh_send_state() { link_send_status_msg(); }
 
 static void on_link_command(const char *cmd) {
   if (strcmp(cmd, "ON") == 0) {
