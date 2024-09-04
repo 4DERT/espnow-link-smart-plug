@@ -20,7 +20,9 @@
 #include "nvs.h"
 #include "nvs_flash.h"
 
+// Project
 #include "button.h"
+#include "leds.h"
 
 #define TAG "MAIN"
 
@@ -30,6 +32,7 @@ void app_main() {
   init_nvs();
   uart_set_baudrate(UART_NUM_0, 115200);
 
+  leds_init();
   button_init();
 
   while (1) {
